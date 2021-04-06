@@ -10,34 +10,60 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.redAccent[200],
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                width: 100.0,
-                color: Colors.red,
+              CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: AssetImage('assets/images/avatar.png')),
+              Text(
+                'Olexandr Litvin',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Playfair Display SC',
+                ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.yellow.withOpacity(0.5),
-                  ),
-                ],
+              Text(
+                'FLUTTER DEVELOPER',
+                style: TextStyle(
+                    fontSize: 15.0,
+                    color: Colors.white70,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Source Sans Pro',
+                    letterSpacing: 4),
               ),
-              Container(
-                width: 100.0,
-                color: Colors.blue,
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(color: Colors.blueGrey.shade100),
               ),
+              Card(
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(Icons.phone, color: Colors.redAccent[200]),
+                    title: Text(
+                      "+380 67 346 30 04",
+                      style: TextStyle(color: Colors.black, fontSize: 20.0),
+                    ),
+                  )),
+              Card(
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(Icons.email, color: Colors.redAccent[200]),
+                    title: Text(
+                      "gostar1337@gmail.com",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontFamily: "Source Sans Pro"),
+                    ),
+                  )),
             ],
           ),
         ),
